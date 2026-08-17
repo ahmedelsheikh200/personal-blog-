@@ -1,0 +1,15 @@
+<%- include('../includes/header')%>
+<link rel="stylesheet" href="/css/form.css">
+<main>
+    <form method="post" action="<%= editing ? '/admin/edit/'+post._id : '/admin/addpost' %>">
+    <label for="title">Title of the post</label><br>
+    <input type="text" id="title" name="title" value="<%= editing ? post.title : '' %>"><br>
+    
+    <label for="article">The Article</label><br>
+
+    <textarea id="article" name="article"><%= editing ? post.article : '' %></textarea><br>
+    
+    <button type="submit"><%= editing ? 'UPDATE' : 'ADD' %></button>
+    </form>
+</main>
+<%- include('../includes/footer')%>

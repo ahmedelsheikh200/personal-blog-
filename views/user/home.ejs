@@ -1,0 +1,50 @@
+<%- include('../includes/header')%>
+    <main>
+        <h2 id="hello">hello <%= username%></h2>
+            <% if (path ==='dashboard'){%>
+                <a class="btn" href="/admin/addpost">+Add</a>
+            <%}%>
+        <%if(posts.length >0){%>
+        <% posts.forEach (post => {%>
+            <div class="card">
+                <p class="title"><%= post.title%></p>
+                <p class="author">by <%= post.author.username%></p>
+                <p class="date"><%=post.createdAt%></p>
+                <p class="likes"><%=post.likes%>❤️</p>
+                <div class="card-actions">
+                    <div class="actions-left">
+                        <% if (path === 'dashboard') { %>
+                            <a class="btn btn-edit" href="/admin/edit/<%= post._id %>">Edit</a>
+                            <form method="post" action="/admin/delete/<%= post._id %>">
+                                <button type="submit">Delete</button>
+                            </form>
+                        <% } %>
+                        <% if(isAuth && path ==='home'){%>
+                            <% if (likedPosts.includes(post._id.toString())){%>
+                                <form method="post" action="/dislike/<%=post._id%>">
+                                    <button type="submit" class="star-btn star-filled">★</button>
+                                </form>
+                            <%} else {%>
+                                    <form method="post" action="/like/<%=post._id%>">
+                                    <button type="submit" class="star-btn  star-empty">☆</button>
+                                    </form>
+                                <%}%>
+                        <%}%>
+                        
+                    </div>
+                    <div class="actions-right">
+                        <a class="btn btn-read" href="/article/<%= post._id %>">Read</a>
+                    </div>
+                    </div>
+            </div>
+
+            <%})%>
+            <%}else {%>
+                <h1>No blogs untill now</h1>
+            <%}%>
+        
+
+    </main>
+    <%- include('../includes/footer')%>
+
+    

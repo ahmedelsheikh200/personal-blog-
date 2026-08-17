@@ -1,0 +1,24 @@
+<%- include('../includes/header')%>
+    <link rel="stylesheet" href="/css/signup.css">
+
+<main>
+    
+
+    <h1>signup</h1>
+    <form class="signup-page" method="post" action="/signup">
+        <label for="username">User Name</label>
+        <input type="text" id="username" name="username" value="<%= errMessage ? oldInput.username :''%>">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" value="<%= errMessage ? oldInput.email :''%>">
+        <label for="password">password</label>
+        <input type="password" id="password" name="password"value="<%= errMessage ? oldInput.password :''%>">
+        <label for="confirmPassword">confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" value="<%= errMessage ? oldInput.confirmPassword :''%>">
+        <button type="submit">SignUp</button>
+        
+    </form>
+    <% if (errMessage){%>
+        <h1 class="err"> <%=errMessage%></h1>
+    <%}%>
+</main>
+<%- include('../includes/footer')%>

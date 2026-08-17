@@ -1,0 +1,103 @@
+/* =========================
+   ARTICLE
+========================= */
+
+.post {
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 50px;
+
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Title */
+
+#title {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+
+/* Author */
+
+#author {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+
+/* Date */
+
+#date {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 35px;
+}
+
+
+/* Article content */
+
+#article {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+
+    white-space: pre-wrap;
+}
+
+
+/* Download button */
+
+.post form {
+    margin-top: 35px;
+}
+
+.post button {
+    border: none;
+    border-radius: 6px;
+
+    padding: 10px 18px;
+
+    background: #4f8cff;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.post button:hover {
+    background: #326edb;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .post {
+        width: 92%;
+        padding: 25px 20px;
+        margin: 25px auto;
+    }
+
+    #title {
+        font-size: 28px;
+    }
+
+    #article {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+}

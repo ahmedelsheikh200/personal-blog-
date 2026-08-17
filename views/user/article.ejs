@@ -1,0 +1,17 @@
+<%- include('../includes/header')%>
+<link rel="stylesheet" href="/css/article.css">
+    <main>
+        <div class="post">
+            <h1 id="title"><%=post['title']%></h1>
+            <p id="author"><%= post.author['username']%></p>
+            <p id="date"> <%= post['createdAt']%></p>
+            <p id="article"><%=post['article']%></p>
+            <form method="post" action="/download/<%= post._id %>" target="_blank">
+                <button type="submit">Download</button>
+            </form>
+        </div>
+
+ 
+
+    </main>
+    <%- include('../includes/footer')%>

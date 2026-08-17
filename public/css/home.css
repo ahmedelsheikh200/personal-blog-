@@ -1,0 +1,364 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #222;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav {
+    background: #222;
+    padding: 18px 8%;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #4f8cff;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    flex: 1;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 22px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.author {
+    color: #666;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+}
+
+.date {
+    color: #999;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CARD ACTIONS
+========================= */
+
+.card-actions {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.actions-left form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.actions-right {
+    display: flex;
+    align-items: center;
+}
+
+.actions-left form {
+    margin: 0;
+}
+
+.actions-left .btn {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+button {
+    border: none;
+    border-radius: 6px;
+
+    padding: 9px 15px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+
+/* =========================
+   GENERAL BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+
+    background: #222;
+    color: white;
+
+    margin-bottom: 25px;
+}
+
+.btn:hover {
+    background: #444;
+}
+
+
+/* =========================
+   EDIT
+========================= */
+
+.btn-edit {
+    background: #f0ad4e;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #d9942d;
+}
+
+
+/* =========================
+   DELETE
+========================= */
+
+.actions-left form button:not(.star-btn) {
+    background: #dc3545;
+    color: white;
+}
+
+.actions-left form button:not(.star-btn):hover {
+    background: #b52a37;
+}
+
+
+/* =========================
+   READ
+========================= */
+
+.btn-read {
+    background: #4f8cff;
+    color: white;
+}
+
+.btn-read:hover {
+    background: #326edb;
+}
+
+
+/* =========================
+   STAR
+========================= */
+
+.star-btn {
+    background: none !important;
+    border: none !important;
+
+    font-size: 28px;
+    line-height: 1;
+
+    padding: 4px 8px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.star-btn:hover {
+    transform: scale(1.2);
+}
+
+
+/* Empty star */
+
+.star-empty {
+    color: #aaa !important;
+}
+
+.star-empty:hover {
+    color: #f5b400 !important;
+}
+
+
+/* Filled star */
+
+.star-filled {
+    color: #f5b400 !important;
+}
+
+.star-filled:hover {
+    color: #d99e00 !important;
+}
+
+
+/* =========================
+   HELLO MESSAGE
+========================= */
+
+#hello {
+    font-size: 28px;
+    font-weight: 600;
+
+    color: #222;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   AUTH LINKS
+========================= */
+
+.auth-links {
+    margin-left: auto;
+
+    display: flex;
+    gap: 30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #222;
+    color: #aaa;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .nav {
+        padding: 15px 5%;
+        gap: 18px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    main {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .card-actions {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .actions-left {
+        flex-wrap: wrap;
+    }
+
+    .auth-links {
+        gap: 15px;
+    }
+}

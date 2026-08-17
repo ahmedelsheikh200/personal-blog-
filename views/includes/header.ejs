@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=path%></title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <header class="nav">
+        <a href="/">home</a>
+        <% if (isAuth){%>
+        <a href="/favourites">favourites</a>
+        <%} %>
+        <% if (isAdmin){%>
+            <a href="/admin/dashboard">dashBoard</a>
+        <%}%>
+
+    <div class="auth-links">
+        <% if(!isAuth){%>
+            <a href="/signup">SignUp</a>
+            <a href="/login">LogIn</a>
+        <%}%>
+        <% if(isAuth){%>
+            <form method="post" action="/logout">
+                <button type="submit">LogOut</button>
+            </form>
+            
+        <%}%>
+        
+        
+
+    </div>
+    </header>

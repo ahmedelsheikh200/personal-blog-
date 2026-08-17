@@ -1,0 +1,16 @@
+<%- include('../includes/header')%>
+    <link rel="stylesheet" href="/css/signup.css">
+
+<main>
+    <h2>verify your email by otp</h2>
+    <h2><%= email %></h2>
+     <form class="signup-page" method="post" action="/verify-otp">
+        <label for="otp">Enter Otp</label>
+        <input type="text" id="otp" name="otp">
+        <button type="submit">verify</button>
+     </form>
+        <% if (errMessage){%>
+        <h1 class="err"> <%=errMessage%></h1>
+    <%}%>
+</main>
+<%- include('../includes/footer')%>
